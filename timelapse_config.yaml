@@ -1,23 +1,39 @@
+timelapse:
+  sequence_name: My timelapse
+  
+  # Interval between captures, in seconds
+  interval: 60
+  # Interval must be larger than the shutter speed
+  
+  # Number of captures to be taken, -1 -> continue indefinitely
+  num_captures: 15
+  
+  # Please note that 'interval * num_captures' is the time it will take for your timelapse to run its course
+  # It's your job to ensure there is enough space on the usb drive (and power, if running on battery/power bank)
+
+  # Number of seconds to wait after boot before starting capture sequence
+  initial_wait_time: 30
+
 camera:
   # Max resolution is 3280 * 2464
   resolution: {width: 3280, height: 2464}
   
   # Exposure
-  shutter_speed: auto   # in seconds
+  shutter_speed: auto # in seconds, if not auto
   shutter_speed_fixed: true
   iso: 100
   # Aperture is fixed at 2.8 on the Pi Camera module
-  # Set shutter speed
 
+  # Adjust rotation to fit how you've mounted the camera
+  rotation: 0
+  
+  # Please note that when shutter speed is auto and fixed (i.e., the default setting),
+  # the program will find a suitable shutter speed on the first run and stick with
+  # that for the rest of the timelapse, in order to produce images of similar
+  # exposure and thus reduce flickering in the final video product
+
+  # Image file format
   format: jpeg
   jpeg_quality: 85
-  # See URL below for image format options
+  # See documentation via the URL below for info about image format options
   # https://picamera.readthedocs.io/en/release-1.13/api_camera.html#picamera.PiCamera.capture
-
-timelapse:
-  # Interval between captures, in seconds
-  # Must be larger than the shutter speed
-  interval: 300
-  
-  # Number of captures to be taken, -1 means infinite
-  num_captures: -1
