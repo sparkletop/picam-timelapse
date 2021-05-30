@@ -1,0 +1,23 @@
+camera:
+  # Max resolution is 3280 * 2464
+  resolution: {width: 3280, height: 2464}
+  
+  # Exposure
+  shutter_speed: auto   # in seconds
+  shutter_speed_fixed: true
+  iso: 100
+  # Aperture is fixed at 2.8 on the Pi Camera module
+  # Set shutter speed
+
+  format: jpeg
+  jpeg_quality: 85
+  # See URL below for image format options
+  # https://picamera.readthedocs.io/en/release-1.13/api_camera.html#picamera.PiCamera.capture
+
+timelapse:
+  # Interval between captures, in seconds
+  # Must be larger than the shutter speed
+  interval: 300
+  
+  # Number of captures to be taken, -1 means infinite
+  num_captures: -1
