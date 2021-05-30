@@ -1,9 +1,10 @@
-# Timelapse-picam
+# picam-timelapse
 
-A project to automate capturing timelapse sequences with the PiCamera and attached USB storage. Once the Raspberry Pi is set up, 
+A project to automate capturing timelapse sequences with the Raspberry Pi Camera Module.
 
 ## Features
 
-- Automounts attached USB storage and stores photos there
-- Camera and timelapse settings can be configured by placing a file on the USB drive
-- The Pi's MicroSD card should be a readonly file system, to alleviate problems related to plugging and unplugging power
+- Store captured photographs on a USB drive
+- Camera and timelapse settings can be configured by placing a yaml file on the USB drive (default config included)
+- Use onboard LED to indicate read/write activity
+- The Pi's MicroSD card should be a readonly file system, to alleviate data corruption problems related to plugging and unplugging power (this is not implemented yet)
